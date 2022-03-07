@@ -3,8 +3,8 @@
 pragma solidity ^0.8.0;
 
 contract Transactions {
-    //uint256 = variavel de numero
-    // Variavel para contar o número de transações
+    // uint256 = number variable
+    // variable to count the number of transactions
     uint256 transactionCount;
 
     event Transfer(address from, address receiver, uint amount, string message, uint256 timestamp, string keyword); 
@@ -18,11 +18,11 @@ contract Transactions {
         string keyword;
     }
 
-    //Vetor de transações
+    //Transactions vectors
     TransferStruct[] transactions;
 
     /*
-    * Emissor de eventos
+    * Call function to emit the events
      */
     function addToBlockchain(address payable receiver, uint amount, string memory message, string memory keyword) public {
         transactionCount += 1;
@@ -32,14 +32,14 @@ contract Transactions {
     }
 
     /*
-     * Retorna lista de todas transações
+     * Return all transactions list
      */
     function getAllTransactions() public view returns (TransferStruct[] memory) {
         return transactions;
     }
 
     /*
-     * Retorna um contador de transações feitas
+     * Return a counter with the number of all transactions done
      */
     function getTransactionCount() public view returns (uint256){
         return transactionCount;
